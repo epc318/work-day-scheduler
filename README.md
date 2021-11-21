@@ -13,8 +13,10 @@ This repository contains the HTML, CSS, JavaScript, and other related elements t
 #### Live Website URL
 https://epc318.github.io/work-day-scheduler/
 
-## Source Code Example:
-![Work Day Scheduler]()
+## Source Code and Deployment Example:
+![Work Day Scheduler - Source Code](https://github.com/epc318/work-day-scheduler/blob/main/Assets/images/Source_Code_example_scheduler.PNG)
+
+![Work Day Scheduler - Deployed]()
 
 ## Built With
 * HTML

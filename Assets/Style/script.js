@@ -1,34 +1,32 @@
-// Display current date and day of the week
-var todayDate = moment().format('dddd, MMM Do YYYY');
-$("#currentDay").html(todayDate);
+// Display current date
+var currentDate = moment().format('dddd, MMM Do YYYY');
+$("#currentDay").html(currentDate);
 
 $(document).ready(function () {
     // saveBtn click listener 
     $(".saveBtn").on("click", function () {
-        // Get nearby values of the description in JQuery
-        var text = $(this).siblings(".description").val();
+        var text = $(this).siblings(".tasks").val();
         var time = $(this).parent().attr("id");
 
-        // save text input to local storage
+        // save input to local storage
         localStorage.setItem(time, text);
     })
-
-       
+   
     function timeTracker() {
-        //current hour
-        var currentTime = moment().hour();
+        //get current hour
+        var timeNow = moment().hour();
 
-        // looping through each time row
+        // loop through time rows
         $(".time-row").each(function () {
-            var rowTime = parseInt($(this).attr("id").split("hour")[1]);
+            var blockTime = parseInt($(this).attr("id").split("hourslot")[1]);
 
-            // To check the time and add the classes for background indicators
-            if (rowTime < currentTime) {
+            
+            if (blockTime < timeNow) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
                 $(this).addClass("past");
             }
-            else if (rowTime === currentTime) {
+            else if (blockTime === timeNow) {
                 $(this).removeClass("past");
                 $(this).removeClass("future");
                 $(this).addClass("present");
@@ -41,3 +39,17 @@ $(document).ready(function () {
             }
         })
     }
+
+    // Get input from storage
+    $("#9am .tasks").val(localStorage.getItem("9am"));
+    $("#10am .tasks").val(localStorage.getItem("10am"));
+    $("#11am .tasks").val(localStorage.getItem("11am"));
+    $("#12pm .tasks").val(localStorage.getItem("12pm"));
+    $("#1pm .tasks").val(localStorage.getItem("1pm"));
+    $("#2pm .tasks").val(localStorage.getItem("2pm"));
+    $("#3pm .tasks").val(localStorage.getItem("3pm"));
+    $("#4pm .tasks").val(localStorage.getItem("4pm"));
+    $("#5pm .tasks").val(localStorage.getItem("5pm"));
+
+    timeTracker();
+})

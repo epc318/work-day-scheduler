@@ -16,7 +16,7 @@ https://epc318.github.io/work-day-scheduler/
 ## Source Code and Deployment Example:
 ![Work Day Scheduler - Source Code](https://github.com/epc318/work-day-scheduler/blob/main/Assets/images/Source_Code_example_scheduler.PNG)
 
-![Work Day Scheduler - Deployed]()
+![Work Day Scheduler - Deployed but broken](https://github.com/epc318/work-day-scheduler/blob/main/Assets/images/deploy_ex.PNG)
 
 ## Built With
 * HTML
